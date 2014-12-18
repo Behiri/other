@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int i,j;
+int main()
+{
+	int size = 5;
+	int arr1[6], arr2[6];
+
+	bool flag = true;
+	for(i = 0; i < 6; i++)
+		{
+			cout << "enter a number to arr1: ";
+			cin >> arr1[i];
+	}
+	for(j = 0; j < 6; j++)
+	{
+		cout << "enter a number to arr2: ";
+		cin >> arr2[j];
+	}
+	for (i = 0; i < 6; i++)
+			if (arr1[i] != arr2[i])
+				flag = false;
+	if (flag)
+		cout << "barabar and" << endl;
+	else
+		cout << "barabar nistand" << endl;
+	return 0;
+
+}

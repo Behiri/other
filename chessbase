@@ -1,11 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int nextPosition(int);
+void nextPosition(int,int);
+
+ int x = 0,y = 0;
+    int& x1 = x;
+    int& y1 = y;
 
 int main()
 {
-    int x = 0,y = 0;
+
     bool chessBoard[8][8];
     for(int i = 0; i < 8; i++)
         for(int j = 0; j < 8; j++)
@@ -27,15 +31,13 @@ int main()
         cout << endl;
     }
 
-     for(int i = 0; i < 8; i++)
+     for(int i = 7; i != 0; i--)
     {
-        for(int j = 0; j < 8; j++)
+        for(int j = 7; j != 0; j--)
         {
              if (chessBoard[i][j] == 1)
              {
-                 x = j;
-                 y = i;
-                 break;
+                nextPosition(i,j);
              }
 
         }
@@ -43,4 +45,10 @@ int main()
     cout << "x = " << x << "     y = " << y << endl;
 
     return 0;
+}
+
+void nextPosition(int num1, int num2)
+{
+    x1 = num2;
+    y1 = num1;
 }

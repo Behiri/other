@@ -1,0 +1,74 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+void decimalToHex(int);
+void decimalToOct(int);
+void decimalTobinary(int);
+void binaryToDecimal(int);
+void binaryToOct(int);
+void binaryToHex(int);
+void octToHex(int);
+void octTobinary(int);
+void octToDecimal(int);
+void hexToDecimal(int);
+void hexToOct(int);
+void hexToBinary(int);
+
+vector<int> numList;
+
+int main() {
+    cout << "hi there body, please choose one of the flowing converts: " << endl;
+    cout << "1.decimal input\n2.oct input\n3.binary input\n4.hex input\n";
+    int selection;
+    int number = 3;
+    cin >> selection;
+    cin >> number;
+
+    switch (selection)
+    {
+        case 1: {
+            decimalToHex(number);
+            decimalToOct(number);
+            decimalTobinary(number);
+            break;
+        }
+        case 2: {
+            binaryToDecimal(number);
+            binaryToOct(number);
+            binaryToHex(number);
+            break;
+        }
+        case 3: {
+            octToHex(number);
+            octTobinary(number);
+            octToDecimal(number);
+            break;
+        }
+        case 4: {
+            hexToDecimal(number);
+            hexToOct(number);
+            hexToBinary(number);
+        }
+        default:
+            cout << "that is not valid selection" << endl;
+    }
+    return 0;
+}
+void decimalToHex(int num)
+{
+    while (true)
+    {
+        int tempNum = num % 16;
+        numList.push_back(tempNum);
+
+        if (0 == tempNum / 16)
+        {
+            numList.push_back(tempNum % 16);
+            break;
+        }
+        for (vector<int>::iterator iter = numList.end(); iter != numList.begin(); iter++)
+            cout << *iter;
+
+    }
+}
